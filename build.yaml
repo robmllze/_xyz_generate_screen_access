@@ -1,0 +1,8 @@
+builders:
+    generate_screen_access:
+      import: "package:_xyz_generate_screen_access/xyz_generate_screen_access.dart"
+      builder_factories: ["screenAccessBuilder"]
+      build_extensions: {".dart": [".g.dart"]}
+      auto_apply: dependents
+      build_to: cache
+      applies_builders: ["source_gen:combining_builder"]
