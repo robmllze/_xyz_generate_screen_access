@@ -164,15 +164,17 @@ class ScreenAccessGenerator extends GeneratorForAnnotation<GenerateScreenAccess>
         const _LOCATION = "/\$_SEGMENT";
         const _NAME_SCREEN_CLASS = "$nameScreenClass";
 
-        String _tr([Map<dynamic, dynamic> args = const {}]) {
-          final segments = this.split(":::");
-          final length = segments.length;
-          if (length == 1) {
-            return this.translate<String>(args, this) ?? this;
+        extension _ScreenTrExtension on String {
+          String screenTr([Map<dynamic, dynamic> args = const {}]) {
+            final segments = this.split(":::");
+            final length = segments.length;
+            if (length == 1) {
+              return this.translate<String>(args, this) ?? this;
+            }
+            final fallback = segments[0];
+            final path = "\$_L.\${segments[1].trim()}";
+            return path.translate<String>(args, fallback) ?? fallback;
           }
-          final fallback = segments[0];
-          final path = "\$_L.\${segments[1].trim()}";
-          return path.translate<String>(args, fallback) ?? fallback;
         }
 
         // **************************************************************************
