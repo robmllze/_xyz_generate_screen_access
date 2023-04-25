@@ -75,7 +75,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/robmllze/desktop/dev/flutter/packages/flutter",
+      "rootUri": "file:///Users/robmllze/Desktop/Dev/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -135,7 +135,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/robmllze/desktop/dev/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/robmllze/Desktop/Dev/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -206,7 +206,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-04-25T06:20:35.953044Z",
+  "generated": "2023-04-25T14:28:41.483324Z",
   "generator": "pub",
   "generatorVersion": "3.0.0-218.1.beta"
 }

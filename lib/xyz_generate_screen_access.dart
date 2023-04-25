@@ -4,6 +4,8 @@
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
+library xyz_generate_screen_access;
+
 import 'package:build/build.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:source_gen/source_gen.dart';
@@ -11,7 +13,7 @@ import 'package:source_gen/source_gen.dart';
 import 'package:xyz_generate_screen_access_annotations/xyz_generate_screen_access_annotations.dart';
 import 'package:xyz_utils/xyz_utils.dart';
 
-import 'model_visitor.dart';
+import 'visitor.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
@@ -38,7 +40,7 @@ class ScreenAccessGenerator extends GeneratorForAnnotation<GenerateScreenAccess>
         = annotation.read("isOnlyAccessibleIfSignedIn").boolValue;
     final isOnlyAccessibleIfSignedOut //
         = annotation.read("isOnlyAccessibleIfSignedOut").boolValue;
-    final visitor = ModelVisitor();
+    final visitor = Visitor();
     element.visitChildren(visitor);
     final buffer = StringBuffer();
     final nameScreenClass = visitor.nameClass.toString();
