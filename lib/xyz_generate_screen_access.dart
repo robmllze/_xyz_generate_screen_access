@@ -189,7 +189,7 @@ class ScreenAccessGenerator extends GeneratorForAnnotation<GenerateScreenAccess>
           $nameScreenConfigurationClass: (MyRouteConfiguration a) => $nameScreenConfigurationClass.from(a)
         });
         
-        SuperScreen? maker$nameScreenClass(
+        MyScreen? maker$nameScreenClass(
         MyRouteConfiguration configuration,
         bool isSignedInAndVerified,
         bool isSignedIn,
@@ -321,6 +321,8 @@ class ScreenAccessGenerator extends GeneratorForAnnotation<GenerateScreenAccess>
             );
           }
         }
+
+        // **************************************************************************
 
         /// Allows child classes to access `screen`, `state` and`configuration`
         /// without having to cast them.
