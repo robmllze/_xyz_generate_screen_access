@@ -321,6 +321,16 @@ class ScreenAccessGenerator extends GeneratorForAnnotation<GenerateScreenAccess>
             );
           }
         }
+
+        /// Allows child classes to access `screen`, `state` and`configuration`
+        /// without having to cast them.
+        abstract class _LogicBroker<T1 extends $nameScreenClass, T2 extends _State>
+            extends MyScreenLogic<$nameScreenConfigurationClass> {
+          late final screen = super.superScreen as T1;
+          late final state = super.superState as T2;
+          late final configuration = this.state.configuration;
+          _LogicBroker(super.superScreen, super.superState);
+        }
         """,
       ],
     );
